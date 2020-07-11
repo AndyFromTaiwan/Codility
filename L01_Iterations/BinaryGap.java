@@ -18,14 +18,14 @@
 class Solution {
     public int solution(int N) {
         // write your code in Java SE 8
-        
-        String binRep = Integer.toBinaryString(N);
         int longestBinGap = 0;
-        
-        int lastOne = 0; // Only 0's binary representation doesn't contain
+
+        String binRep = Integer.toBinaryString(N);
+        int lastOne = 0; // only 0's binary representation doesn't contain
                          // a leading zero, but this solution still works.
         for(int i=1; i<binRep.length(); i++) {
             if(binRep.charAt(i)=='1') {
+                // compares the length of binary gap
                 longestBinGap = Math.max(longestBinGap, i-lastOne-1);
                 lastOne = i;
             }
