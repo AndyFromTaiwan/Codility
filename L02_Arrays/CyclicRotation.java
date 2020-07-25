@@ -18,10 +18,11 @@
 class Solution {
     public int[] solution(int[] A, int K) {
         // write your code in Java SE 8
-        int[] R = new int[A.length];
-        if(A.length==0) return R;
-        
+        if(A.length==0) return A;
         K %= A.length;
+        if(K==0) return A;
+        
+        int[] R = new int[A.length];
         for(int i=0; i<A.length-K; i++) {
             R[i+K] = A[i];
         }
